@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Multi-screen Wallpaper Helper</title>
+    </head>
+    <body>
+        <div id="preview"></div>
+        <div id="toolbar">
+            <button name="help">Help</button>
+            <button name="add-monitor">Add</button>
+            <button name="remove-monitor">Remove</button>
+            <button name="calibration">Calibration</button>
+            <button name="wallpaper">Wallpaper
+                <input type="file" accept="image/*" hidden>
+            </button>
+            <span name="message"></span>
+        </div>
+        <div id="help">
+            <p>This is a tool to help users align wallpaper correctly across different sized monitors. Click "Calibration" to start, when you are done, right click on the monitors and click "Save image as" to download them.</p>
+        </div>
+        <div id="properties">
+            <form action="javascript:void(0)" method="get" data-monitor="-1" hidden>
+                <label>
+                    <p>Actual width in inches (″):</p>
+                    <input type="number" name="actual-width">
+                </label>
+                <label>
+                    <p>Actual height in inches (″):</p>
+                    <input type="number" name="actual-height">
+                </label>
+                <label>
+                    <p>Actual x-offset in inches (″):</p>
+                    <input type="number" name="actual-x">
+                </label>
+                <label>
+                    <p>Actual y-offset in inches (″):</p>
+                    <input type="number" name="actual-y">
+                </label>
+            </form>
+        </div>
+        <div id="calibration">
+            <form action="javascript:void(0)" method="get" hidden>
+                <p>Select the main monitor for calibration</p>
+                <label>
+                    <p>Actual width in inches (″):</p>
+                    <input type="number" name="actual-width" required>
+                </label>
+                <label>
+                    <p>Actual height in inches (″):</p>
+                    <input type="number" name="actual-height" required>
+                </label>
+                <label>
+                    <p>Virtual width in pixels (px):</p>
+                    <input type="number" name="virtual-width" required>
+                </label>
+                <label>
+                    <p>Virtual height in pixels (px):</p>
+                    <input type="number" name="virtual-height" required>
+                </label>
+                <br>
+                <button type="submit">Done</button>
+            </form>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
