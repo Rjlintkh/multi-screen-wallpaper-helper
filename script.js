@@ -30,12 +30,12 @@ const Tool = {
                 [properties.elements["actual-x"].value, properties.elements["actual-y"].value] = this.position;
             }
             if (Tool.wallpaper !== null) {
-                [this.canvas.width, this.canvas.height] = [this.size[0] * Tool.calibration.getPixelsPerInch()[0], this.size[1] * Tool.calibration.getPixelsPerInch()[0]];
+                [this.canvas.width, this.canvas.height] = [this.size[0] * Tool.calibration.getPixelsPerInch()[0], this.size[1] * Tool.calibration.getPixelsPerInch()[1]];
                 let ctx = this.canvas.getContext("2d");
                 ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
                 ctx.drawImage(Tool.wallpaper,
                     Tool.wallpaper.width / 2 - (this.size[0] * Tool.calibration.getPixelsPerInch()[0]) / 2 + this.position[0] * Tool.calibration.getPixelsPerInch()[0],
-                    Tool.wallpaper.height / 2 - (this.size[1] * Tool.calibration.getPixelsPerInch()[0]) / 2 - this.position[1] * Tool.calibration.getPixelsPerInch()[0],
+                    Tool.wallpaper.height / 2 - (this.size[1] * Tool.calibration.getPixelsPerInch()[1]) / 2 - this.position[1] * Tool.calibration.getPixelsPerInch()[1],
                     this.canvas.width, this.canvas.height,
                     0, 0, this.canvas.width, this.canvas.height
                 )
