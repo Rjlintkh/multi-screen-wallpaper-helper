@@ -35,7 +35,7 @@ const Tool = {
                 ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
                 ctx.drawImage(Tool.wallpaper,
                     Tool.wallpaper.width / 2 - (this.size[0] * Tool.calibration.getPixelsPerInch()[0]) / 2 + this.position[0] * Tool.calibration.getPixelsPerInch()[0],
-                    Tool.wallpaper.height / 2 - (this.size[1] * Tool.calibration.getPixelsPerInch()[1]) / 2 - this.position[1] * Tool.calibration.getPixelsPerInch()[1],
+                    Tool.wallpaper.height / 2 - (this.size[1] * Tool.calibration.getPixelsPerInch()[0]) / 2 - this.position[1] * Tool.calibration.getPixelsPerInch()[0],
                     this.canvas.width, this.canvas.height,
                     0, 0, this.canvas.width, this.canvas.height
                 )
@@ -49,9 +49,9 @@ const Tool = {
             if (value === true) {
                 Tool.monitors.forEach(e => e.active = false);
                 properties.hidden = false;
-                properties.dataset.monitor = this.id;  
+                properties.dataset.monitor = this.id;
                 [properties.elements["actual-width"].value, properties.elements["actual-height"].value] = this.size;
-                [properties.elements["actual-x"].value, properties.elements["actual-y"].value] = this.position;         
+                [properties.elements["actual-x"].value, properties.elements["actual-y"].value] = this.position;
                 this.element.classList.add("active");
                 document.getElementById("help").hidden = true;
                 document.forms[1].hidden = true;
